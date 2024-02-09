@@ -27,6 +27,7 @@
     "expo-router": "~3.4.3",
     "expo-splash-screen": "~0.26.3",
     "expo-status-bar": "~1.11.1",
+    "firebase": "^10.8.0",
     "font": "^0.0.4",
     "lodash.filter": "^4.6.0",
     "react": "18.2.0",
