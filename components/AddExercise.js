@@ -47,11 +47,8 @@ const AddExercise = () => {
                     width: '85%',
                     height: '85%',
                     }}>
-              <ExerciseList />
-              <Button title="Hide" textColor='#2196F3' onPress={hide} labelStyle={{ fontSize: 18 }} 
-                      style={{ marginTop: 25, marginBottom: 30, fontSize: 60 }}>
-                  Add to workout
-              </Button>
+              <ExerciseList hide={hide} />
+              
             </View>
           </View>
           

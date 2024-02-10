@@ -4,13 +4,14 @@ import { View, StyleSheet, Image, Text, Pressable, TouchableOpacity } from 'reac
 import { SafeAreaView, ActivityIndicator } from 'react-native';
 import { TextInput } from 'react-native';
 import { FlatList } from 'react-native';
+import { Button } from 'react-native-paper';
 
 
 
-const ExerciseList = () => {
+const ExerciseList = ( {hide} ) => {
     // Add in a category property *
     const exercises = [
-        {name: 'Bench Press', category: 'Chest', id: '1'},
+        {name: 'Bench Press (Barbell)', category: 'Chest', id: '1'},
         {name: 'Squat', category: 'Quads', id: '2'},
         {name: 'Deadlift', category: 'Erectors', id: '3'},
         {name: 'Pull Up', category: 'Lats', id: '4'},
@@ -107,7 +108,16 @@ const ExerciseList = () => {
                     renderItem = {({item, index}) => filterData(item) }
                         
                 />
+
+                <View>
+                <Button title="Hide" textColor='#2196F3' onPress={hide} labelStyle={{ fontSize: 18 }} 
+                      style={{ marginTop: 25, marginBottom: 30, fontSize: 60 }}>
+                  Add to workout
+              </Button>
+                </View>
+                
         </SafeAreaView>
+        
     );
 }
 
