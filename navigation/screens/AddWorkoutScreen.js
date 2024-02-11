@@ -8,10 +8,17 @@ export default function AddWorkoutScreen({ navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
            <Text variant="displaySmall"
-                style={{marginTop: -20}}
+                style={{marginTop: -20, fontWeight: 'bold'}}
            >Create Workout</Text>
 
               <MyModal />
+              <View style={{flex: 1, alignItems: 'flex-', justifyContent: 'flex-start'}}>
+              <Text variant="headlineMedium"
+                style={{marginTop: -20, fontWeight: 'bold'}}
+           >Templates</Text>
+              </View>
+              
+              
         </SafeAreaView>
 
         
