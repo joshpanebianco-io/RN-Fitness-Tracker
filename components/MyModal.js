@@ -60,7 +60,7 @@ const MyModal = () => {
 
               <AddExercise />
 
-            
+              
 
               <Button
                 icon="cancel"
