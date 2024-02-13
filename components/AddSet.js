@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         marginRight: 18,
         marginTop: 10,
         width: 35,
-        height: 30,
+        height: 25,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
         
       },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 10,
         width: 65,
-        height: 30,
+        height: 25,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
       textInputReps: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 10,
         width: 65,
-        height: 30,
+        height: 25,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
       textInputRest: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 10,
         width: 65,
-        height: 30,
+        height: 25,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
 

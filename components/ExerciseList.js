@@ -8,7 +8,7 @@ import { Button } from 'react-native-paper';
 
 
 
-const ExerciseList = ( {hide} ) => {
+const ExerciseList = ( {hide, addToWorkout} ) => {
     // Add in a category property *
     const exercises = [
         {name: 'Bench Press (Barbell)', category: 'Chest', id: '1'},
@@ -113,7 +113,10 @@ const ExerciseList = ( {hide} ) => {
                 <Button title="Hide" textColor='#2196F3' 
                     onPress={() => {
                         hide();
-                    
+                        // Filter exercises based on selectedItems
+                        const selectedExercises = sortedExercises.filter(exercise => selectedItems.includes(exercise.id));
+                        // Call addToWorkout function from props and pass selected exercises
+                        addToWorkout(selectedExercises);
                     }} 
                     labelStyle={{ fontSize: 18 }} 
                     style={{ marginTop: 25, marginBottom: 30, fontSize: 60 }}>

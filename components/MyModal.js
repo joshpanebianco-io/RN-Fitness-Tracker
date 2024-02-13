@@ -7,7 +7,7 @@ import { Text } from 'react-native-paper';
 import { TextInput } from 'react-native-paper';
 import { useState } from 'react';
 import AddExercise from './AddExercise';
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { FlatList, ScrollView, GestureHandlerRootView } from 'react-native-gesture-handler';
 import AddToWorkout from './AddToWorkout';
 
 
@@ -35,6 +35,8 @@ const MyModal = () => {
       </Button>
 
       <Modal visible={visible} animationType='slide'>
+      <GestureHandlerRootView>
+      <ScrollView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <SafeAreaView style={[styles.fill, styles.white]}>
             <Button title="Hide" textColor='#2196F3' onPress={hide} style={{ marginTop: 50 }}>
@@ -56,8 +58,9 @@ const MyModal = () => {
                 style={styles.textInput}
               />
 
-              <AddToWorkout />
+              {/* <AddToWorkout /> */}
 
+             
               <AddExercise />
 
               
@@ -66,14 +69,16 @@ const MyModal = () => {
                 icon="cancel"
                 buttonColor="#DC143C"
                 mode="contained"
-                onPress={() => console.log('Pressed')}
-                style={{ marginTop: 20, marginLeft: 15, marginRight: 15, borderRadius: 15 }}
+                onPress={hide}
+                style={{ marginTop: 20, marginBottom: 60, marginLeft: 15, marginRight: 15, borderRadius: 15 }}
               >
                 Cancel Workout
               </Button>
             </View>
           </SafeAreaView>
         </TouchableWithoutFeedback>
+        </ScrollView>
+      </GestureHandlerRootView>
       </Modal>
       
     </SafeAreaView>

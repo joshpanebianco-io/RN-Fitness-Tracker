@@ -76,10 +76,10 @@ const AddExercise = (  ) => {
         <View key={exerciseIndex}>
           <Text style={styles.heading}>{exercise.name}</Text>
           <View style={styles.container}>
-            <Text style={styles.text}>Set</Text>
-            <Text style={styles.text}>Weight</Text>
-            <Text style={styles.text}>Reps</Text>
-            <Text style={styles.text}>Rest</Text>
+            <Text style={styles.labelSet}>Set</Text>
+            <Text style={styles.labelWeight}>Weight</Text>
+            <Text style={styles.labelReps}>Reps</Text>
+            <Text style={styles.labelRest}>Rest</Text>
           </View>
           
 
@@ -102,7 +102,7 @@ const AddExercise = (  ) => {
             onPress={() => handleAddSetButtonClick(exerciseIndex)}
             rippleColor='rgba(211, 211, 211, 0.4)'
             labelStyle={{ fontSize: 16, color: 'black', marginVertical: 5 }}
-            style={{ marginTop: 17.5, marginBottom: 10, borderRadius: 15, marginHorizontal: 15, height: 30 }}
+            style={{ marginTop: 15, marginBottom: 5, borderRadius: 15, marginHorizontal: 15, height: 30 }}
           >
             Add Set
           </Button>
@@ -155,9 +155,11 @@ const AddExercise = (  ) => {
 const styles = StyleSheet.create({
 
 
-  container: {
-
-  },
+  // container: {
+  //   flexDirection: 'row', // Align items horizontally
+  //   justifyContent: 'flex-start', // Align items in the center horizontally
+  //   alignItems: 'center', // Align items in the center vertically
+  // },
 
   
   centeredView: {
@@ -230,49 +232,47 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  textInputSet: {
-    backgroundColor: 'white',
-    marginLeft: 20,
-    marginRight: 15,
-    marginTop: 10,
-    width: 35,
-    height: 30,
-    backgroundColor: 'rgba(211, 211, 211, 0.3)',
 
+  labelSet: {
+    marginLeft: 19,
+    marginRight: 35,
+    marginBottom: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  textInputWeight: {
-    backgroundColor: 'white',
-    marginLeft: 30,
-    marginRight: 15,
-    marginTop: 10,
-    width: 65,
-    height: 30,
-    backgroundColor: 'rgba(211, 211, 211, 0.3)',
+
+  labelWeight: {
+    marginLeft: 22,
+    marginRight: 35,
+    marginBottom: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  textInputReps: {
-    backgroundColor: 'white',
-    marginLeft: 27,
-    marginRight: 15,
-    marginTop: 10,
-    width: 55,
-    height: 30,
-    backgroundColor: 'rgba(211, 211, 211, 0.3)',
+
+  labelReps: {
+    marginLeft: 25,
+    marginRight: 35,
+    marginBottom: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  textInputRest: {
-    backgroundColor: 'white',
-    marginLeft: 23,
-    marginRight: 15,
-    marginTop: 10,
-    width: 55,
-    height: 30,
-    backgroundColor: 'rgba(211, 211, 211, 0.3)',
+
+  labelRest: {
+    marginLeft: 31,
+    marginRight: 35,
+    marginBottom: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
+
+
+  
   deleteButton: {
     backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
     width: 100,
-    height: 30,
+    height: 25,
     borderRadius: 15,
     marginTop: 9,
     marginRight: 5,
@@ -280,6 +280,49 @@ const styles = StyleSheet.create({
     
    
   },
+
+
+  // textInputSet: {
+  //   backgroundColor: 'white',
+  //   marginLeft: 20,
+  //   marginRight: 15,
+  //   marginTop: 10,
+  //   width: 35,
+  //   height: 30,
+  //   backgroundColor: 'rgba(211, 211, 211, 0.3)',
+
+  // },
+  // textInputWeight: {
+  //   backgroundColor: 'white',
+  //   marginLeft: 30,
+  //   marginRight: 15,
+  //   marginTop: 10,
+  //   width: 65,
+  //   height: 30,
+  //   backgroundColor: 'rgba(211, 211, 211, 0.3)',
+  // },
+  // textInputReps: {
+  //   backgroundColor: 'white',
+  //   marginLeft: 27,
+  //   marginRight: 15,
+  //   marginTop: 10,
+  //   width: 65,
+  //   height: 30,
+  //   backgroundColor: 'rgba(211, 211, 211, 0.3)',
+  // },
+  // textInputRest: {
+  //   backgroundColor: 'white',
+  //   marginLeft: 23,
+  //   marginRight: 15,
+  //   marginTop: 10,
+  //   width: 65,
+  //   height: 30,
+  //   backgroundColor: 'rgba(211, 211, 211, 0.3)',
+  // },
+
+
+
+
 });
 
 export default AddExercise;
