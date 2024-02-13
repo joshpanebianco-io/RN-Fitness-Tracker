@@ -18,20 +18,30 @@ const AddExercise = (  ) => {
 
   const [addSetComponent, setAddSetComponent] = useState([]);
 
-  const handleAddSetButtonClick = () => {
-    setAddSetComponent(prevComponents => [...prevComponents, <AddSet key={prevComponents.length} />]);
+  const handleAddSetButtonClick = (exerciseIndex) => {
+    setSelectedExercises(prevExercises => {
+      const updatedExercises = [...prevExercises];
+      updatedExercises[exerciseIndex].sets.push({}); // Add an empty set
+      return updatedExercises;
+      
+    });
   };
 
   // Function to add selected exercises to the workout
   const addToWorkout = (exercisesToAdd) => {
-    setSelectedExercises(prevExercises => [...prevExercises, ...exercisesToAdd]);
+    const exercisesWithSets = exercisesToAdd.map(exercise => ({ ...exercise, sets: [{}] }));
+    setSelectedExercises(prevExercises => [...prevExercises, ...exercisesWithSets]);
   };
 
-  const deleteSet = (index) => {
-    setAddSetComponent(prevComponents => prevComponents.filter((_, i) => i !== index));
+  const deleteSet = (exerciseIndex, setIndex) => {
+    setSelectedExercises(prevExercises => {
+      const updatedExercises = [...prevExercises];
+      updatedExercises[exerciseIndex].sets.splice(setIndex, 1); // Remove set at setIndex
+      return updatedExercises;
+    });
   };
 
-  const renderRightActions = (progress, dragX, index) => {
+  const renderRightActions = (progress, dragX, exerciseIndex, setIndex) => {
     const scale = dragX.interpolate({
       inputRange: [-100, 0],
       outputRange: [1, 0],
@@ -45,7 +55,7 @@ const AddExercise = (  ) => {
     });
 
     return (
-      <TouchableOpacity onPress={() => deleteSet(index)}>
+      <TouchableOpacity onPress={() => deleteSet(exerciseIndex, setIndex)}>
         <View style={styles.deleteButton}>
           <Animated.Text style={{ transform: [{ scale }], color: 'white' }}>Delete</Animated.Text>
         </View>
@@ -62,26 +72,26 @@ const AddExercise = (  ) => {
   return (
     <SafeAreaView>
       
-      {selectedExercises.map((exercise, index) => (
-          <View>
-              <Text style={styles.heading} key={index}>{exercise.name}</Text>
-              <View style={styles.container}>
-                <Text style={styles.text}>Set</Text>
-                <Text style={styles.text}>Weight</Text>
-                <Text style={styles.text}>Reps</Text>
-                <Text style={styles.text}>Rest</Text>
-          </View> 
+      {selectedExercises.map((exercise, exerciseIndex) => (
+        <View key={exerciseIndex}>
+          <Text style={styles.heading}>{exercise.name}</Text>
+          <View style={styles.container}>
+            <Text style={styles.text}>Set</Text>
+            <Text style={styles.text}>Weight</Text>
+            <Text style={styles.text}>Reps</Text>
+            <Text style={styles.text}>Rest</Text>
+          </View>
           
 
           <GestureHandlerRootView>
-        {addSetComponent.map((_, index) => (
-          <Swipeable
-            key={index}
-            renderRightActions={(progress, dragX) => renderRightActions(progress, dragX, index)}
-          >
-            <AddSet />
-          </Swipeable>
-        ))}
+          {exercise.sets.map((_, setIndex) => (
+            <Swipeable
+              key={setIndex}
+              renderRightActions={(progress, dragX) => renderRightActions(progress, dragX, exerciseIndex, setIndex)}
+            >
+              <AddSet />
+            </Swipeable>
+          ))}
         </GestureHandlerRootView>
 
           <Button
@@ -89,7 +99,7 @@ const AddExercise = (  ) => {
             icon='plus'
             buttonColor='rgba(211, 211, 211, 0.3)'
             mode="contained"
-            onPress={handleAddSetButtonClick}
+            onPress={() => handleAddSetButtonClick(exerciseIndex)}
             rippleColor='rgba(211, 211, 211, 0.4)'
             labelStyle={{ fontSize: 16, color: 'black', marginVertical: 5 }}
             style={{ marginTop: 17.5, marginBottom: 10, borderRadius: 15, marginHorizontal: 15, height: 30 }}

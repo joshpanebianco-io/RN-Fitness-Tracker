@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     },
     textInputSet: {
         backgroundColor: 'white',
-        marginLeft: 20,
-        marginRight: 15,
+        marginLeft: 15,
+        marginRight: 18,
         marginTop: 10,
         width: 35,
         height: 30,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         marginLeft: 27,
         marginRight: 15,
         marginTop: 10,
-        width: 55,
+        width: 65,
         height: 30,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
@@ -72,10 +72,15 @@ const styles = StyleSheet.create({
         marginLeft: 23,
         marginRight: 15,
         marginTop: 10,
-        width: 55,
+        width: 65,
         height: 30,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
+
+
+
+
+      
       
 })
 
