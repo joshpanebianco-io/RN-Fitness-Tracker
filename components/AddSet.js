@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 import { TextInput } from 'react-native-paper';
 
-const AddSet = ({ onDelete }) => {
+const AddSet = ({ setNumber }) => {
 
     return (
         
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         marginRight: 18,
         marginTop: 10,
         width: 35,
-        height: 25,
+        height: 22.5,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
         
       },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 10,
         width: 65,
-        height: 25,
+        height: 22.5,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
       textInputReps: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 10,
         width: 65,
-        height: 25,
+        height: 22.5,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
       textInputRest: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 10,
         width: 65,
-        height: 25,
+        height: 22.5,
         backgroundColor: 'rgba(211, 211, 211, 0.3)',
       },
 

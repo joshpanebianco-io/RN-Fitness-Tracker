@@ -10,8 +10,8 @@ import AddSet from './AddSet';
 
 
 const AddExercise = (  ) => {
-  const [visible, setVisible] = React.useState(false);
-  const [text, setText] = React.useState("");
+  const [visible, setVisible] = useState(false);
+  const [text, setText] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
 
   const [selectedExercises, setSelectedExercises] = useState([]);
@@ -74,7 +74,15 @@ const AddExercise = (  ) => {
       
       {selectedExercises.map((exercise, exerciseIndex) => (
         <View key={exerciseIndex}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <Text style={styles.heading}>{exercise.name}</Text>
+          {/* <Button  mode="text" 
+         
+          >
+            X
+          </Button> */}
+          </View>
+          
           <View style={styles.container}>
             <Text style={styles.labelSet}>Set</Text>
             <Text style={styles.labelWeight}>Weight</Text>
@@ -101,8 +109,8 @@ const AddExercise = (  ) => {
             mode="contained"
             onPress={() => handleAddSetButtonClick(exerciseIndex)}
             rippleColor='rgba(211, 211, 211, 0.4)'
-            labelStyle={{ fontSize: 16, color: 'black', marginVertical: 5 }}
-            style={{ marginTop: 15, marginBottom: 5, borderRadius: 15, marginHorizontal: 15, height: 30 }}
+            labelStyle={{ fontSize: 16, color: 'black', marginVertical: 2.5 }}
+            style={{ marginTop: 15, marginBottom: 5, borderRadius: 15, marginHorizontal: 15, height: 25 }}
           >
             Add Set
           </Button>
@@ -271,11 +279,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 100,
-    height: 25,
+    width: 70,
+    height: 22.5,
     borderRadius: 15,
     marginTop: 9,
-    marginRight: 5,
+    marginRight: 15,
+    marginLeft: 18,
     color: 'white',
     
    

@@ -21,7 +21,8 @@ export default function HistoryScreen({ navigation }) {
         setDate(propDate);
     }
 
-    // *** Remember to put the Calender in its own component ***
+    // *** Actually put everything in component and render components ***
+    // *** Remember to put the Calender in its own component  ***
 
     return (
         <SafeAreaView>
