@@ -13,8 +13,8 @@ const MyModal = () => {
   const [visible, setVisible] = React.useState(false);
   const [text, setText] = React.useState("");
   const [isModalVisible, setModalVisible] = useState(false);
-  const [timer, setTimer] = useState(0); // State for the timer
-  const [startTime, setStartTime] = useState(null); // State for start time
+  const [timer, setTimer] = useState(0); 
+  const [startTime, setStartTime] = useState(null); 
 
   const show = async () => {
     setVisible(true);

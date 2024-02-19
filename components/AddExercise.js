@@ -2,14 +2,16 @@ import React, {useState} from 'react';
 import {Alert, Modal, StyleSheet, Text, Pressable, View, Animated} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import SearchBar from './ExerciseList';
 import { transparent, TouchableOpacity } from 'react-native';
 import { Swipeable, GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Icon } from 'react-native-elements';
+
+import SearchBar from './ExerciseList';
 import ExerciseList from './ExerciseList';
 import AddSet from './AddSet';
 
 
-const AddExercise = (  ) => {
+const AddExercise = () => {
   const [visible, setVisible] = useState(false);
   const [text, setText] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
@@ -75,12 +77,17 @@ const AddExercise = (  ) => {
       {selectedExercises.map((exercise, exerciseIndex) => (
         <View key={exerciseIndex}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={styles.heading}>{exercise.name}</Text>
-          {/* <Button  mode="text" 
-         
-          >
-            X
-          </Button> */}
+            <Text style={styles.heading}>{exercise.name}</Text>
+           
+          <TouchableOpacity>
+            <Icon
+              name='ellipsis-horizontal-outline'
+              type='ionicon'
+              color='#2196F3'
+              style={{ marginRight: 20, marginTop: 27.5 }}
+            />
+            </TouchableOpacity>
+            
           </View>
           
           <View style={styles.container}>
